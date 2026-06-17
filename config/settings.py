@@ -135,3 +135,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JWT_SECRET = os.getenv("JWT_SECRET", SECRET_KEY)
 JWT_EXPIRE_HOURS = int(os.getenv("JWT_EXPIRE_HOURS", 24))
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "accounts.authentication.CustomJWTAuthentication",
+    ],
+}
